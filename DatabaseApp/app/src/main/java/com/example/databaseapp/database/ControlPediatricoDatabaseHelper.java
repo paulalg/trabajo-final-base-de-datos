@@ -59,15 +59,15 @@ public class ControlPediatricoDatabaseHelper extends SQLiteOpenHelper
     @Override
     public void onCreate(SQLiteDatabase db) 
     {
-        db.execSQL(DATABASE_NAME);
         Log.d("Create Database: ", DATABASE_NAME);
         db.execSQL(CREATE_PACIENTE_TABLE);
         db.execSQL(CREATE_HUMOR_TABLE);
-		db.execSQL(CREATE_GRUPO_SANGUINEO_TABLE);
-		db.execSQL(CREATE_CONTROL_TABLE);
-		db.execSQL(CONTROL_HUMOR_TABLE);
+        db.execSQL(CREATE_GRUPO_SANGUINEO_TABLE);
+        db.execSQL(CREATE_CONTROL_TABLE);
+        db.execSQL(CREATE_CONTROL_HUMOR_TABLE);
         insertDefaultData();
     }
+
 
     public void onInitializeDB()
     {
@@ -84,7 +84,6 @@ public class ControlPediatricoDatabaseHelper extends SQLiteOpenHelper
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) 
     {
-      //  db.execSQL(DATABASE_DROP_STATEMENT);
         db.execSQL(DATABASE_NAME);
     }    
 
